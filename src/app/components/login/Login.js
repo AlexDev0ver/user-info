@@ -14,11 +14,6 @@ class Login extends React.Component {
         e.preventDefault();
 
         this.props.login(this.state.name, this.state.password);
-        if (this.props.loggedIn) {
-            return (
-                <Redirect to="/" />
-            )
-        }
     }
 
     render() {

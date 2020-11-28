@@ -15,7 +15,7 @@ function user(state = null, action) {
 function loggedIn(state = false, action) {
     switch(action.type) {
         case ACTION.LOGIN:
-            return true;
+            return true
         case ACTION.LOGOUT:
             return false
         case ACTION.SET_USER:

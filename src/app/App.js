@@ -7,14 +7,13 @@ import Login from './components/login/Login';
 import SignUp from './components/sign-up/SignUp';
 
 function App(props) {
+
   return (
       <div>
-        <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/sign-up" component={SignUp} />
-            <PrivateRoute path="/" auth={props.loggedIn} component={UserPage} />
-            <Redirect to ="/login" />
-        </Switch>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/sign-up" component={SignUp} />
+        <PrivateRoute path="/" auth={localStorage.getItem('loggedIn') ? true : false} component={UserPage} />
+        <Redirect to ="/login" />
       </div>
   );
 }

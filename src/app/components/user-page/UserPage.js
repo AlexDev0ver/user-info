@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { getUser, logout, login } from '../../redux/actions';
+import { getUser, logout } from '../../redux/actions';
 
 class UserPage extends React.Component {
 
@@ -55,4 +55,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getUser, logout, login })(UserPage);
+export default connect(mapStateToProps, { getUser, logout })(UserPage);

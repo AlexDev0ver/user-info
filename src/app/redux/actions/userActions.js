@@ -22,6 +22,12 @@ export const login = (username, password) => async(dispatch) => {
         localStorage.setItem('accessToken', login.data.access);
         localStorage.setItem('clientId', login.data.client_id);
         localStorage.setItem('refreshToken', login.data.refresh);
+        
+        if (localStorage.getItem('accessToken') &&
+            localStorage.getItem('clientId') &&
+            localStorage.getItem('refreshToken')) {
+                localStorage.setItem('loggedIn', 'true')
+        }
 
         dispatch(loginCreator());
     }
